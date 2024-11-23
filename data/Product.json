@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Crew Neck Short Sleeve T-Shirt",
+    "imageUrl": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/476528/sub/goods_476528_sub14_3x4.jpg?width=369",
+    "stock": 10,
+    "price": 199000,
+    "CategoryId": 1
+  },
+  {
+    "name": "Oversized Striped Crew Neck T-Shirt | Half Sleeve",
+    "imageUrl": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/465492/item/goods_69_465492_3x4.jpg?width=369",
+    "stock": 10,
+    "price": 199000,
+    "CategoryId": 1
+  },
+  {
+    "name": "Oversized Striped Crew Neck T-Shirt | Half Sleeve",
+    "imageUrl": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/465492/item/goods_69_465492_3x4.jpg?width=369",
+    "stock": 30,
+    "price": 199000,
+    "CategoryId": 1
+  },
+  {
+    "name": "Round Mini Shoulder Bag | Corduroy",
+    "imageUrl": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/472049/item/goods_68_472049_3x4.jpg?width=369",
+    "stock": 20,
+    "price": 199000,
+    "CategoryId": 4
+  },
+  {
+    "name": "Ultra Stretch Skinny Fit Jeans (Damaged)",
+    "imageUrl": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/463904/sub/goods_463904_sub14_3x4.jpg?width=369",
+    "stock": 20,
+    "price": 599000,
+    "CategoryId": 5
+  }
+]
