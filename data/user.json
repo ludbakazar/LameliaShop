@@ -1,0 +1,14 @@
+[
+  {
+    "email": "ludbakazar@mail.com",
+    "password": "ludbakazar",
+    "name": "Abdul Razak",
+    "role": "Admin"
+  },
+  {
+    "email": "arsyila@mail.com",
+    "password": "arsyila",
+    "name": "Arsyila Shakela Razak",
+    "role": "Customer"
+  }
+]
