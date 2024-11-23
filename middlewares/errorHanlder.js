@@ -26,7 +26,11 @@ const errorHandler = (error, req, res, next) => {
   } else if (error.name === "forbidden") {
     status = 403;
     message = "You don't have permission";
+  } else if (error.name === "notfound") {
+    status = 404;
+    message = "Not found";
   }
+
   res.status(status).json({ message });
 };
 
