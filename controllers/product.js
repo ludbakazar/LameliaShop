@@ -21,3 +21,28 @@ exports.getProductById = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.createProduct = async (req, res, next) => {
+  try {
+    const newProduct = await Product.create(req.body);
+    res.status(201).json(newProduct);
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.deleteProduct = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findByPk(id);
+    if (!product) {
+      throw { name: "notfound" };
+    }
+    await product.destroy();
+    res.status(200).json({
+      message: "Product deleted successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
