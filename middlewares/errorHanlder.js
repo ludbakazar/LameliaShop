@@ -17,8 +17,16 @@ const errorHandler = (error, req, res, next) => {
   ) {
     status = 400;
     message = error.errors[0].message;
+  } else if (
+    error.name === "Unauthorized" ||
+    error.name === "JsonWebTokenError"
+  ) {
+    status = 401;
+    message = "Invalid token";
+  } else if (error.name === "forbidden") {
+    status = 403;
+    message = "You don't have permission";
   }
-
   res.status(status).json({ message });
 };
 

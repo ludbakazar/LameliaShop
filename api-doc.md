@@ -56,6 +56,14 @@ _Response (401 - Unauthorized)_
 
 Request:
 
+- headers:
+
+```json
+{
+  "access_token": "string"
+}
+```
+
 - body:
 
 ```json
@@ -105,6 +113,14 @@ _Response (401 - Unauthorized)_
 ```json
 {
   "message": "Invalid Token"
+}
+```
+
+_Response (403 - Forbidden)_
+
+```json
+{
+  "message": "You don't have permission"
 }
 ```
 
