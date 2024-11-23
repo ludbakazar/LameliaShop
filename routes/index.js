@@ -9,6 +9,6 @@ router.post("/login", login);
 router.use(authentication);
 router.post("/register", isAdmin, register);
 
-router.get("/products");
+router.use("/products", require("./product"));
 
 module.exports = router;
