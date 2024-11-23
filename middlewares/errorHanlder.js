@@ -11,6 +11,12 @@ const errorHandler = (error, req, res, next) => {
   } else if (error.name === "unauthentication") {
     status = 401;
     message = "Invalid email or password";
+  } else if (
+    error.name === "SequelizeValidationError" ||
+    error.name === "SequelizeUniqueConstraintError"
+  ) {
+    status = 400;
+    message = error.errors[0].message;
   }
 
   res.status(status).json({ message });
