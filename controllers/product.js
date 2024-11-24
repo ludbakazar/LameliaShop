@@ -46,3 +46,17 @@ exports.deleteProduct = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.editProduct = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findByPk(id);
+    if (!product) {
+      throw { name: "notfound" };
+    }
+    const updated = await product.update(req.body);
+    res.status(200).json(updated);
+  } catch (error) {
+    next(error);
+  }
+};
