@@ -10,5 +10,6 @@ router.use(authentication);
 router.post("/register", isAdmin, register);
 
 router.use("/products", require("./product"));
+router.use("/categories", require("./category"));
 
 module.exports = router;
