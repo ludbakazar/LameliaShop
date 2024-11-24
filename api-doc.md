@@ -11,6 +11,8 @@ List of available endpoints:
 - `POST /products`
 - `PUT /products/:id`
 - `DELETE /products/:id`
+- `GET /categories`
+- `POST /categories`
 
 &nbsp;
 
@@ -446,6 +448,105 @@ _Response (404 - Not Found)_
 ```json
 {
   "message": "Not Found"
+}
+```
+
+&nbsp;
+
+## 8. GET /categories
+
+Request:
+
+- headers:
+
+```json
+{
+  "access_token": "string"
+}
+```
+
+_Response (200 - Ok)_
+
+```json
+{
+  [
+    {
+        "id": 1,
+        "name": "T-Shirt",
+        "createdAt": "2024-11-23T05:10:48.606Z",
+        "updatedAt": "2024-11-23T05:10:48.606Z"
+    },
+    {
+        "id": 2,
+        "name": "Jaket",
+        "createdAt": "2024-11-23T05:10:48.606Z",
+        "updatedAt": "2024-11-23T05:10:48.606Z"
+    },
+    {
+        "id": 3,
+        "name": "Polo Shirt",
+        "createdAt": "2024-11-23T05:10:48.606Z",
+        "updatedAt": "2024-11-23T05:10:48.606Z"
+    },
+    ...
+  ]
+}
+```
+
+_Response (401 - Unauthorized)_
+
+```json
+{
+  "message": "Invalid Token"
+}
+```
+
+&nbsp;
+
+## 9. POST /categories
+
+Request:
+
+- headers:
+
+```json
+{
+  "access_token": "string"
+}
+```
+
+- Body:
+
+```json
+{
+  "name": "string"
+}
+```
+
+_Response (201 - Created)_
+
+```json
+{
+  "id": 6,
+  "name": "Outerwear",
+  "updatedAt": "2024-11-24T06:19:49.843Z",
+  "createdAt": "2024-11-24T06:19:49.843Z"
+}
+```
+
+_Response (400 - Bad Request)_
+
+```json
+{
+  "message": "Name is required"
+}
+```
+
+_Response (401 - Unauthorized)_
+
+```json
+{
+  "message": "Invalid Token"
 }
 ```
 
