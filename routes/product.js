@@ -5,7 +5,6 @@ const {
   deleteProduct,
   editProduct,
 } = require("../controllers/product");
-const isAdmin = require("../middlewares/isAdmin");
 
 const router = require("express").Router();
 

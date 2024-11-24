@@ -8,6 +8,9 @@ List of available endpoints:
 - `POST /register`
 - `GET /products`
 - `GET /products/:id`
+- `POST /products`
+- `PUT /products/:id`
+- `DELETE /products/:id`
 
 &nbsp;
 
@@ -201,6 +204,14 @@ Request:
 }
 ```
 
+- params:
+
+```json
+{
+  "id": "number"
+}
+```
+
 _Response (200 - Ok)_
 
 ```json
@@ -235,6 +246,206 @@ _Response (404 - Not Found)_
 ```json
 {
   "message": "Not found"
+}
+```
+
+&nbsp;
+
+## 5. POST /products
+
+Request:
+
+- headers:
+
+```json
+{
+  "access_token": "string"
+}
+```
+
+- body:
+
+```json
+{
+  "name": "string",
+  "imageUrl": "string",
+  "stock": "number",
+  "price": "number",
+  "CategoryId": "number"
+}
+```
+
+_Response (201 - Created)_
+
+```json
+{
+  "id": 7,
+  "name": "Stelan Bola Nike Air",
+  "imageUrl": "goooogggg",
+  "stock": 10,
+  "price": 1590000,
+  "CategoryId": 1,
+  "updatedAt": "2024-11-24T04:33:13.282Z",
+  "createdAt": "2024-11-24T04:33:13.282Z"
+}
+```
+
+_Response (401 - Unauthorized)_
+
+```json
+{
+  "message": "Invalid Token"
+}
+```
+
+_Response (400 - Bad Request)_
+
+```json
+{
+  "message": "Name is required"
+}
+OR
+{
+  "message" : "Image Url is required"
+}
+OR
+{
+  "message" : "Stock is required"
+}
+OR
+{
+  "message" : "Price is required"
+}
+```
+
+&nbsp;
+
+## 6. PUT /products/:id
+
+Request:
+
+- headers:
+
+```json
+{
+  "access_token": "string"
+}
+```
+
+- params:
+
+```json
+{
+  "id": "number"
+}
+```
+
+- body:
+
+```json
+{
+  "name": "string",
+  "imageUrl": "string",
+  "stock": "number",
+  "price": "number",
+  "CategoryId": "number"
+}
+```
+
+_Response (200 - Ok)_
+
+```json
+{
+  "id": 7,
+  "name": "Stelan Bola Nike Air",
+  "imageUrl": "goooogggg",
+  "stock": 10,
+  "price": 1590000,
+  "CategoryId": 1,
+  "updatedAt": "2024-11-24T04:33:13.282Z",
+  "createdAt": "2024-11-24T04:33:13.282Z"
+}
+```
+
+_Response (401 - Unauthorized)_
+
+```json
+{
+  "message": "Invalid Token"
+}
+```
+
+_Response (400 - Bad Request)_
+
+```json
+{
+  "message": "Name is required"
+}
+OR
+{
+  "message" : "Image Url is required"
+}
+OR
+{
+  "message" : "Stock is required"
+}
+OR
+{
+  "message" : "Price is required"
+}
+```
+
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Not Found"
+}
+```
+
+&nbsp;
+
+## 7. DELETE /products/:id
+
+Request:
+
+- headers:
+
+```json
+{
+  "access_token": "string"
+}
+```
+
+- params:
+
+```json
+{
+  "id": "number"
+}
+```
+
+_Response (200 - Ok)_
+
+```json
+{
+  "message": "Product deleted successfully"
+}
+```
+
+_Response (401 - Unauthorized)_
+
+```json
+{
+  "message": "Invalid Token"
+}
+```
+
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Not Found"
 }
 ```
 
